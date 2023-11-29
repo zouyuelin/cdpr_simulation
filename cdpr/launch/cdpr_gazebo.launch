@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="paused" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="use_sim_time" default="true"/>
+  
+  <!-- Launch Gazebo with empty world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true" />
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  </include>
+  
+  <!-- spawn robot -->
+  <node name="cdpr_gazebo_simulator" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model cube -file $(find cdpr_gazebo)/sdf/cube.sdf -x 0.0 -y -0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0">
+    <param name="publishPeriod"              value="0.0" />
+    <param name="velocityEpsilon"            value="-0.001" />
+    <param name="velocityControllerForward"  value="0"/>
+    <param name="velocityControllerP"        value="200"/>
+    <param name="velocityControllerI"        value="20"/>
+    <param name="velocityControllerD"        value="1"/>
+    <param name="velocityControllerDdegree"  value="2"/>
+    <param name="velocityControllerDbuffer"  value="11"/>
+    <param name="velocityControllerMaxI"     value="100.0" />
+    <param name="velocityControllerMaxCmd"   value="100.0" />
+    <param name="velocityControllerPcutoff"  value="0.1" /> <!-- relative to fs -->
+    <param name="velocityControllerPquality" value="0.707" /> <!-- 2nd order Butterworth -->
+    <param name="velocityControllerPcascade" value="0" />
+    <param name="velocityControllerDcutoff"  value="0.1" />
+    <param name="velocityControllerDquality" value="0.707" />
+    <param name="velocityControllerDcascade" value="0" />
+    <param name="positionControllerP"        value="200.0" /> 
+    <param name="positionControllerI"        value="70.0" />
+    <param name="positionControllerD"        value="80.0" />
+    <param name="positionControllerDdegree"  value="2"/>
+    <param name="positionControllerDbuffer"  value="11"/>
+    <param name="positionControllerMaxI"     value="100.0" />
+    <param name="positionControllerMaxCmd"   value="100.0" />
+<!-- Tu=0.4 s at Ku=100, Ziegler-Nichols no overshoot>
+    <param name="positionControllerP" value="20.0" /> 
+    <param name="positionControllerI" value="100" />
+    <param name="positionControllerD" value="2.666666666" />
+    <param name="positionControllerMaxI" value="100.0" />
+    <param name="positionControllerMaxCmd" value="100.0" /-->
+  </node>
+  
+  <node
+    name="fengji"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find fengji)/urdf/fengji.urdf -urdf -model fengji" output="screen" />
+  
+  <!-- load model description -->
+  <rosparam file="$(find cdpr_gazebo)/sdf/cube.yaml" command="load" ns="model"/>    
+</launch>

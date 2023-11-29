@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="paused" default="true"/>
+    <arg name="model" default="cube"/>
+    <arg name="model_tra" default="trajectory"/>
+    <arg name="ctl" default="minW"/>
+  	<arg name="gui" default="true"/>
+  	<arg name="use_sim_time" default="true"/>
+    
+    <!-- Launch Gazebo with empty world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true" />
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+  </include>
+  
+  <!-- spawn robot -->
+  <node name="cdpr_gazebo_simulator" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-sdf -model cube -file $(find cdpr)/sdf/$(arg model).sdf -x 0.0 -y -0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0">
+
+<!-- Tu=0.4 s at Ku=100, Ziegler-Nichols no overshoot>
+    <param name="positionControllerP" value="20.0" /> 
+    <param name="positionControllerI" value="100" />
+    <param name="positionControllerD" value="2.666666666" />
+    <param name="positionControllerMaxI" value="100.0" />
+    <param name="positionControllerMaxCmd" value="100.0" /-->
+  </node>
+  
+  <node
+    name="fengji"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find fengji)/urdf/fengji.urdf -urdf -model fengji" output="screen" />
+  
+    <!-- load model description -->
+    <rosparam file="$(find cdpr)/sdf/$(arg model).yaml" command="load" ns="model"/>
+    <rosparam file="$(find trajectory_generator)/sdf/$(arg model_tra).yaml" command="load" ns="Tra"/>
+
+    <node pkg="cdpr_controllers" type="pid_control" name="pid_control" output="screen">
+	<!--	 
+ 		minW = min |W.tau - w| + constraints
+                minT = min |tau| with constraints
+                minA = min |tau - a| with constraints
+  		minAA= min |tau - a| with single a constraints  
+                noMin = no constraints
+        -->
+       <param name="control" value="$(arg ctl)"/>
+    </node>
+   
+
+
+    <!-- generate trajectory -->
+
+    <node pkg="trajectory_generator" type="s_curve" name="trajectory_generator" output="screen">
+    </node>
+
+
+</launch>

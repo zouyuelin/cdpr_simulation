@@ -1,0 +1,761 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="surabaya">
+    <!--Definition of the robot frame-->
+    <link name="frame">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>100000</ixx>
+          <iyy>100000</iyy>
+          <izz>100000</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>100000</mass>
+      </inertial>
+    </link>
+    <!--Definition of the robot cables-->
+    <!--Definition of the robot platform-->
+    <link name="platform">
+      <pose>0.900000 0.900000 0.200000 0.000000 0.000000 0.000000</pose>
+      <visual name="visualpf">
+        <geometry>
+          <box>
+            <size>1.200000 0.600000 0.400000</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collisionpf">
+        <geometry>
+          <box>
+            <size>1.200000 0.600000 0.400000</size>
+          </box>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia>
+          <ixx>100.0</ixx>
+          <iyy>100.0</iyy>
+          <izz>100.0</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+        <mass>100</mass>
+      </inertial>
+    </link>
+    <link name="cable0">
+      <pose>-1.809183 -1.120775 2.316428 -2.502679 0.853663 -1.883915</pose>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>8.781252758006683</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+    </link>
+    <link name="virt_X0">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>-3.500000 -2.000000 3.500000 -2.502679 0.853663 -1.883915</pose>
+    </link>
+    <joint name="rev_X0" type="revolute">
+      <pose>0 0 0 -2.502679 0.853663 -1.883915</pose>
+      <parent>frame</parent>
+      <child>virt_X0</child>
+      <axis>
+        <xyz>-0.202444 -0.625271 -0.753693</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Y0">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>-3.500000 -2.000000 3.500000 -2.502679 0.853663 -1.883915</pose>
+    </link>
+    <joint name="rev_Y0" type="revolute">
+      <pose>0 0 0 -2.502679 0.853663 -1.883915</pose>
+      <parent>virt_X0</parent>
+      <child>virt_Y0</child>
+      <axis>
+        <xyz>-0.625271 0.674859 -0.391920</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="cable0" type="prismatic">
+      <pose>0 0 -1.484749 -2.502679 0.853663 -1.883915</pose>
+      <parent>virt_Y0</parent>
+      <child>cable0</child>
+      <axis>
+        <xyz>-0.753693 -0.391920 0.527585</xyz>
+        <limit>
+          <lower>-4.390626379003342</lower>
+          <upper>4.390626379003342</upper>
+          <effort>10000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Xpf0">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>1.500000 0.600000 0.000000 -2.502679 0.853663 -1.883915</pose>
+    </link>
+    <joint name="rev_Xpf0" type="revolute">
+      <pose>0 0 0 -2.502679 0.853663 -1.883915</pose>
+      <parent>platform</parent>
+      <child>virt_Xpf0</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Ypf0">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>1.500000 0.600000 0.000000 -2.502679 0.853663 -1.883915</pose>
+    </link>
+    <joint name="rev_Ypf0" type="revolute">
+      <pose>0 0 0 -2.502679 0.853663 -1.883915</pose>
+      <parent>virt_Xpf0</parent>
+      <child>virt_Ypf0</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="rev_Zpf0" type="revolute">
+      <pose>0 0 0 -2.502679 0.853663 -1.883915</pose>
+      <child>virt_Ypf0</child>
+      <parent>cable0</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="cable1">
+      <pose>3.023667 -1.612980 3.038552 -2.443690 -0.669172 1.525312</pose>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>8.781252758006683</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+    </link>
+    <link name="virt_X1">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>3.500000 -2.000000 3.500000 -2.443690 -0.669172 1.525312</pose>
+    </link>
+    <joint name="rev_X1" type="revolute">
+      <pose>0 0 0 -2.443690 -0.669172 1.525312</pose>
+      <parent>frame</parent>
+      <child>virt_X1</child>
+      <axis>
+        <xyz>0.035662 0.783524 0.620337</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Y1">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>3.500000 -2.000000 3.500000 -2.443690 -0.669172 1.525312</pose>
+    </link>
+    <joint name="rev_Y1" type="revolute">
+      <pose>0 0 0 -2.443690 -0.669172 1.525312</pose>
+      <parent>virt_X1</parent>
+      <child>virt_Y1</child>
+      <axis>
+        <xyz>0.783524 0.363386 -0.504024</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="cable1" type="prismatic">
+      <pose>0 0 -0.653562 -2.443690 -0.669172 1.525312</pose>
+      <parent>virt_Y1</parent>
+      <child>cable1</child>
+      <axis>
+        <xyz>0.620337 -0.504024 0.600951</xyz>
+        <limit>
+          <lower>-4.390626379003342</lower>
+          <upper>4.390626379003342</upper>
+          <effort>10000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Xpf1">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>0.300000 0.600000 0.400000 -2.443690 -0.669172 1.525312</pose>
+    </link>
+    <joint name="rev_Xpf1" type="revolute">
+      <pose>0 0 0 -2.443690 -0.669172 1.525312</pose>
+      <parent>platform</parent>
+      <child>virt_Xpf1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Ypf1">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>0.300000 0.600000 0.400000 -2.443690 -0.669172 1.525312</pose>
+    </link>
+    <joint name="rev_Ypf1" type="revolute">
+      <pose>0 0 0 -2.443690 -0.669172 1.525312</pose>
+      <parent>virt_Xpf1</parent>
+      <child>virt_Ypf1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="rev_Zpf1" type="revolute">
+      <pose>0 0 0 -2.443690 -0.669172 1.525312</pose>
+      <child>virt_Ypf1</child>
+      <parent>cable1</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="cable2">
+      <pose>-2.817079 1.748397 2.870994 2.761086 0.789412 2.275508</pose>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>8.781252758006683</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+    </link>
+    <link name="virt_X2">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>-3.500000 2.000000 3.500000 2.761086 0.789412 2.275508</pose>
+    </link>
+    <joint name="rev_X2" type="revolute">
+      <pose>0 0 0 2.761086 0.789412 2.275508</pose>
+      <parent>frame</parent>
+      <child>virt_X2</child>
+      <axis>
+        <xyz>-0.456231 0.536506 -0.709939</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Y2">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>-3.500000 2.000000 3.500000 2.761086 0.789412 2.275508</pose>
+    </link>
+    <joint name="rev_Y2" type="revolute">
+      <pose>0 0 0 2.761086 0.789412 2.275508</pose>
+      <parent>virt_X2</parent>
+      <child>virt_Y2</child>
+      <axis>
+        <xyz>0.536506 0.802340 0.261557</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="cable2" type="prismatic">
+      <pose>0 0 -0.789066 2.761086 0.789412 2.275508</pose>
+      <parent>virt_Y2</parent>
+      <child>cable2</child>
+      <axis>
+        <xyz>-0.709939 0.261557 0.653892</xyz>
+        <limit>
+          <lower>-4.390626379003342</lower>
+          <upper>4.390626379003342</upper>
+          <effort>10000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Xpf2">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>0.300000 0.600000 0.000000 2.761086 0.789412 2.275508</pose>
+    </link>
+    <joint name="rev_Xpf2" type="revolute">
+      <pose>0 0 0 2.761086 0.789412 2.275508</pose>
+      <parent>platform</parent>
+      <child>virt_Xpf2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Ypf2">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>0.300000 0.600000 0.000000 2.761086 0.789412 2.275508</pose>
+    </link>
+    <joint name="rev_Ypf2" type="revolute">
+      <pose>0 0 0 2.761086 0.789412 2.275508</pose>
+      <parent>virt_Xpf2</parent>
+      <child>virt_Ypf2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="rev_Zpf2" type="revolute">
+      <pose>0 0 0 2.761086 0.789412 2.275508</pose>
+      <child>virt_Ypf2</child>
+      <parent>cable2</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="cable3">
+      <pose>3.725421 2.157795 3.849402 2.717398 -0.531535 -1.803043</pose>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.005</radius>
+            <length>8.781252758006683</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+    </link>
+    <link name="virt_X3">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>3.500000 2.000000 3.500000 2.717398 -0.531535 -1.803043</pose>
+    </link>
+    <joint name="rev_X3" type="revolute">
+      <pose>0 0 0 2.717398 -0.531535 -1.803043</pose>
+      <parent>frame</parent>
+      <child>virt_X3</child>
+      <axis>
+        <xyz>-0.198409 -0.838886 0.506857</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Y3">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>3.500000 2.000000 3.500000 2.717398 -0.531535 -1.803043</pose>
+    </link>
+    <joint name="rev_Y3" type="revolute">
+      <pose>0 0 0 2.717398 -0.531535 -1.803043</pose>
+      <parent>virt_X3</parent>
+      <child>virt_Y3</child>
+      <axis>
+        <xyz>-0.838886 0.412780 0.354800</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="cable3" type="prismatic">
+      <pose>0 0 0.494870 2.717398 -0.531535 -1.803043</pose>
+      <parent>virt_Y3</parent>
+      <child>cable3</child>
+      <axis>
+        <xyz>0.506857 0.354800 0.785629</xyz>
+        <limit>
+          <lower>-4.390626379003342</lower>
+          <upper>4.390626379003342</upper>
+          <effort>10000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Xpf3">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>1.500000 0.600000 0.400000 2.717398 -0.531535 -1.803043</pose>
+    </link>
+    <joint name="rev_Xpf3" type="revolute">
+      <pose>0 0 0 2.717398 -0.531535 -1.803043</pose>
+      <parent>platform</parent>
+      <child>virt_Xpf3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="virt_Ypf3">
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>0.001</mass>
+      </inertial>
+      <pose>1.500000 0.600000 0.400000 2.717398 -0.531535 -1.803043</pose>
+    </link>
+    <joint name="rev_Ypf3" type="revolute">
+      <pose>0 0 0 2.717398 -0.531535 -1.803043</pose>
+      <parent>virt_Xpf3</parent>
+      <child>virt_Ypf3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="rev_Zpf3" type="revolute">
+      <pose>0 0 0 2.717398 -0.531535 -1.803043</pose>
+      <child>virt_Ypf3</child>
+      <parent>cable3</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <plugin name="cdpr_gazebo_plugin" filename="libcdpr_gazebo_plugin.so"/>
+  </model>
+</sdf>

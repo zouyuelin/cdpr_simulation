@@ -1,0 +1,7 @@
+# This file exports the CMake target which should be passed to the
+# target_link_libraries command.
+
+set(LOG2PLOT_FOUND 1)
+set(LOG2PLOT_INCLUDE_DIRS "${INCLUDE_DEPENDS}")
+set(LOG2PLOT_LIBRARIES "${LIB_DEPENDS}")
+

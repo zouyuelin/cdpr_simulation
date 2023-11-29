@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="cube">
+    <!--Definition of the robot frame-->
+    <link name="frame">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>100000</ixx>
+          <iyy>100000</iyy>
+          <izz>100000</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <mass>100000</mass>
+      </inertial>
+      <visual name="visual1">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>15.0</length>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 -8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision1">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 -8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual2">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>17.3206</length>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 0.000000 0.000000 1.570796 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision2">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 0.000000 0.000000 1.570796 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual3">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>18.6</length>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 -8.660300 0.000000 0.000000 1.570796 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision3">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 -8.660300 0.000000 0.000000 1.570796 0.000000</pose>
+      </collision>
+      <visual name="visual4">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>17.3206</length>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 0.000000 15.000000 1.570796 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision4">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 0.000000 15.000000 1.570796 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual5">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>18.6</length>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 -8.660300 15.000000 0.000000 1.570796 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision5">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 -8.660300 15.000000 0.000000 1.570796 0.000000</pose>
+      </collision>
+      <visual name="visual6">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>15.0</length>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision6">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>-8.600000 8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual7">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>18.6</length>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 8.660300 0.000000 0.000000 1.570796 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision7">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 8.660300 0.000000 0.000000 1.570796 0.000000</pose>
+      </collision>
+      <visual name="visual8">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>18.6</length>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 8.660300 15.000000 0.000000 1.570796 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision8">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>0.700000 8.660300 15.000000 0.000000 1.570796 0.000000</pose>
+      </collision>
+      <visual name="visual9">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>15.0</length>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 -8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision9">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 -8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual10">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>17.3206</length>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 0.000000 0.000000 1.570796 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision10">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 0.000000 0.000000 1.570796 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual11">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>17.3206</length>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 0.000000 15.000000 1.570796 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision11">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 0.000000 15.000000 1.570796 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visual12">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>15.0</length>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision12">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+        <pose>10.000000 8.660300 7.500000 0.000000 0.000000 0.000000</pose>
+      </collision>
+      <visual name="visualpd">
+        <plugin name="draw_traj" filename="libdraw_traj.so"/>
+        <geometry>
+          <sphere>
+            <radius>0.5</radius>
+          </sphere>
+        </geometry>
+        <transparency>1.0</transparency>
+      </visual>
+    </link>
+    <!--Definition of the robot platform-->
+    <link name="platform">
+      <pose>-2.000000 -4.000000 0.080000 0.000000 0.000000 0.000000</pose>
+      <visual name="visualpf">
+        <geometry>
+          <sphere>
+            <radius>0.08</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/kitchen.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collisionpf">
+        <geometry>
+          <sphere>
+            <radius>0.08</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia>
+          <ixx>0.256</ixx>
+          <iyy>0.256</iyy>
+          <izz>0.256</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+        <mass>100</mass>
+      </inertial>
+    </link>
+    <plugin name="cdpr_gazebo_plugin" filename="libcdpr_gazebo_plugin.so"/>
+  </model>
+</sdf>

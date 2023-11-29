@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fengji">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.165630641297193 0.0179082360041747 0.022829210657676"
+        rpy="0 0 0" />
+      <mass
+        value="272.346349793285" />
+      <inertia
+        ixx="10.9162892535691"
+        ixy="-6.76633079284096"
+        ixz="-8.62563967851044"
+        iyy="72.7655017894727"
+        iyz="-0.932617236984803"
+        izz="72.308198141046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/base_link.STL" scale="0.2 0.2 0.2" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/base_link.STL" scale="0.2 0.2 0.2" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+  	<parent link="world"/>
+  	<child link="base_link"/>
+  	<origin rpy="1.5708 0 -1.5708" xyz="0 0 14.33"/>
+  </joint>
+</robot>

@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fengji">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <mass
+        value="272.346349793285" />
+      <inertia
+        ixx="10.9162892535691"
+        ixy="-6.76633079284096"
+        ixz="-8.62563967851044"
+        iyy="72.7655017894727"
+        iyz="-0.932617236984803"
+        izz="72.308198141046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+  </link>
+  <link
+    name="lungu">
+    <inertial>
+      <origin
+        xyz="-0.467204258500917 -0.0505159959738819 -0.0643960454107457"
+        rpy="0 0 0" />
+      <mass
+        value="342.192121148522" />
+      <inertia
+        ixx="132.404989858656"
+        ixy="2.69547291066393"
+        ixz="3.43554850478235"
+        iyy="107.768125957428"
+        iyz="0.371706194045521"
+        izz="107.950635560433" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/lungu.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="lungu_joint"
+    type="continuous">
+    <origin
+      xyz="1.85840601946602 0.200933716286784 0.256147913323616"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lungu" />
+    <axis
+      xyz="0.98500039271603 0.106499735546781 0.135764622334881" />
+  </joint>
+  <link
+    name="yepain 1">
+    <inertial>
+      <origin
+        xyz="-1.64929555775636 1.29182760616608 10.0670063691155"
+        rpy="0 0 0" />
+      <mass
+        value="14116.889117413" />
+      <inertia
+        ixx="1104760.38957161"
+        ixy="20411.5462683365"
+        ixz="161626.457683034"
+        iyy="1113084.48539752"
+        iyz="-138028.885873423"
+        izz="44058.6062979787" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/yepain 1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/yepain 1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yepain 1_joint"
+    type="fixed">
+    <origin
+      xyz="-0.617950886185078 0.08452776677278 1.00670976238828"
+      rpy="0 0 0" />
+    <parent
+      link="lungu" />
+    <child
+      link="yepain 1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="yepain 2">
+    <inertial>
+      <origin
+        xyz="-0.116416090742684 8.10472132982665 -6.32732132763552"
+        rpy="0 0 0" />
+      <mass
+        value="14117.1494142448" />
+      <inertia
+        ixx="1129129.18449919"
+        ixy="-1359.9961899185"
+        ixz="266.874734432561"
+        iyy="421599.750572989"
+        iyz="545077.30832204"
+        izz="711285.895908424" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/yepain 2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/yepain 2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yepain 2_joint"
+    type="fixed">
+    <origin
+      xyz="-0.458024722628691 0.815184823695603 -0.726745932325898"
+      rpy="0 0 0" />
+    <parent
+      link="lungu" />
+    <child
+      link="yepain 2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="yepain 3">
+    <inertial>
+      <origin
+        xyz="1.42475542181582 -9.44563870338292 -3.79956420863009"
+        rpy="0 0 0" />
+      <mass
+        value="14122.429723969" />
+      <inertia
+        ixx="1102615.57901336"
+        ixy="157619.861385402"
+        ixz="63661.1096068493"
+        iyy="183533.822411265"
+        iyz="-382931.452621778"
+        izz="975854.677863295" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/yepain 3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/yepain 3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yepain 3_joint"
+    type="fixed">
+    <origin
+      xyz="-0.292201516394348 -1.04764381273544 -0.468544139170191"
+      rpy="0 0 0" />
+    <parent
+      link="lungu" />
+    <child
+      link="yepain 3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lunguzhao">
+    <inertial>
+      <origin
+        xyz="-0.0763047995433723 -0.00823097621743329 -0.0104726108452695"
+        rpy="0 0 0" />
+      <mass
+        value="272.501354674745" />
+      <inertia
+        ixx="161.117708811838"
+        ixy="-1.08253835068979"
+        ixz="-1.37452224479337"
+        iyy="170.81635914172"
+        iyz="-0.151949805509506"
+        izz="170.743133676253" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/lunguzhao.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/lunguzhao.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lunguzhao_joint"
+    type="fixed">
+    <origin
+      xyz="-0.122698370986623 -0.013266862496323 -0.0169135413160291"
+      rpy="0 0 0" />
+    <parent
+      link="lungu" />
+    <child
+      link="lunguzhao" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="jicang">
+    <inertial>
+      <origin
+        xyz="0.439901939448259 -0.0356931044838689 0.0651110245406841"
+        rpy="0 0 0" />
+      <mass
+        value="557.11146700398" />
+      <inertia
+        ixx="743.929000725066"
+        ixy="-17.4432458302383"
+        ixz="-91.280156269588"
+        iyy="1461.17004732392"
+        iyz="-2.85142519948336"
+        izz="1401.70401219652" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/jicang.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/jicang.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jicang_joint"
+    type="fixed">
+    <origin
+      xyz="-1.96022414085405 0.106215445664645 -0.269810565176655"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="jicang" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gan1">
+    <inertial>
+      <origin
+        xyz="7.29235734908684E-06 -0.00632719577873075 3.88667783113306E-05"
+        rpy="0 0 0" />
+      <mass
+        value="3877.51644131659" />
+      <inertia
+        ixx="157511.386776764"
+        ixy="177.57913820068"
+        ixz="-1.09083537998896"
+        iyy="3435.49243616031"
+        iyz="946.460613062726"
+        izz="157505.777513892" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/gan1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/gan1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gan1_joint"
+    type="fixed">
+    <origin
+      xyz="0.869326894833932 -12.600189840644 0.196992032656595"
+      rpy="0 0 0" />
+    <parent
+      link="jicang" />
+    <child
+      link="gan1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gan2">
+    <inertial>
+      <origin
+        xyz="-0.0344112225790365 23.8659068656556 -0.132894747517028"
+        rpy="0 0 0" />
+      <mass
+        value="5021.62109848233" />
+      <inertia
+        ixx="243778.948627173"
+        ixy="273.790289248583"
+        ixz="-1.68184245760122"
+        iyy="6225.79849290606"
+        iyz="1459.24643873233"
+        izz="243770.300304402" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/gan2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/gan2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gan2_joint"
+    type="continuous">
+    <origin
+      xyz="0.0607859324870628 -46.7498585303854 0.273466575733096"
+      rpy="0 0 0" />
+    <parent
+      link="gan1" />
+    <child
+      link="gan2" />
+    <axis
+      xyz="0.00115251924928122 -0.999980469322186 0.00614269269618746" />
+  </joint>
+  <link
+    name="gan3">
+    <inertial>
+      <origin
+        xyz="-4.72233287140966E-07 -0.00165276416388771 1.7487650353587E-05"
+        rpy="0 0 0" />
+      <mass
+        value="5632.82725606995" />
+      <inertia
+        ixx="272958.721490901"
+        ixy="632.352079686023"
+        ixz="-46.0284100510135"
+        iyy="8968.41130106951"
+        iyz="970.128848667592"
+        izz="273021.413603526" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/gan3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/gan3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gan3_jiont"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="gan2" />
+    <child
+      link="gan3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lugunzhao">
+    <inertial>
+      <origin
+        xyz="-0.0763047995433723 -0.00823097621743329 -0.0104726108452695"
+        rpy="0 0 0" />
+      <mass
+        value="272.501354674745" />
+      <inertia
+        ixx="161.117708811838"
+        ixy="-1.08253835068979"
+        ixz="-1.37452224479337"
+        iyy="170.81635914172"
+        iyz="-0.151949805509506"
+        izz="170.743133676253" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/lugunzhao.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fengji/meshes/lugunzhao.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lugunzhao_joint"
+    type="fixed">
+    <origin
+      xyz="1.7357076484794 0.187666853790461 0.239234372007587"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lugunzhao" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,36 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/yuelinzou/ubuntu/cdpr/devel/include/**",
+        "/home/yuelinzou/rosSpace/URControl/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/yuelinzou/ubuntu/cdpr/src/cdpr/include/**",
+        "/home/yuelinzou/ubuntu/cdpr/src/cdpr_controllers/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/Universal_Robots_ROS_Driver/controller_stopper/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/find_marker/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/follow_drag/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/netft_utils/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/omega/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/rosserial-noetic-devel/rosserial_server/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/rosserial-noetic-devel/rosserial_test/include/**",
+        "/home/yuelinzou/ubuntu/cdpr/src/trajectory_generator/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/fmauch_universal_robot/ur_kinematics/include/**",
+        "/home/yuelinzou/rosSpace/URControl/src/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+        "/home/yuelinzou/ubuntu/cdpr/src/workspace_determination/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
